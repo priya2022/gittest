@@ -13,6 +13,10 @@ const events: Events[] = [
     {
         title: "Meeting 2",
         startDate: new Date(2023, 8, 14)
+    },
+    {
+        title: "Meeting 3",
+        startDate: new Date(2023, 8, 16)
     }
 ]
 const daysInMonth = (year: number, month: number) => {
