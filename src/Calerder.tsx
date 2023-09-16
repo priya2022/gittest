@@ -3,27 +3,21 @@ import './Calendar.css'
 interface Events {
     title: string,
     startDate: Date
-    title: string,
-    startDate: Date
 }
 
 const events: Events[] = [
-const events: Events[] = [
     {
-        title: "Meeting 1",
-        startDate: new Date(2023, 8, 12),
         title: "Meeting 1",
         startDate: new Date(2023, 8, 12),
     },
     {
-        title: "Meeting 2",
-        title: "Meeting 2",
+          title: "Meeting 2",
         startDate: new Date(2023, 8, 14)
     },
     {
         title: "Meeting 3",
         startDate: new Date(2023, 8, 16)
-    },
+    }
     
 ]
 const daysInMonth = (year: number, month: number) => {
@@ -40,11 +34,9 @@ const Calerder:  React.FC = () => {
 
 
     const startDay = new Date(year, month, 1).getDay()
-    const startDay = new Date(year, month, 1).getDay()
 
     //Creating a calendar and push my Data 
 
-    const calendarDays = []
     const calendarDays = []
 
     //looping through untill the endDate
@@ -53,19 +45,12 @@ const Calerder:  React.FC = () => {
         const date = new Date(year, month, i)
         const dayEvents = events.filter((event) => {
             isSameDay(event.startDate, date)
-    for (let i = 1; i <= numOfDaysInMonth; i++) {
-        const date = new Date(year, month, i)
-        const dayEvents = events.filter((event) => {
-            isSameDay(event.startDate, date)
         })
 
         calendarDays.push(
             <div key={i} className="calendar-day">
-            <div key={i} className="calendar-day">
                 <span className="day-number">{i}</span>
                 {
-                    dayEvents.map((event, index) => (
-                        <div key={index} className="event">
                     dayEvents.map((event, index) => (
                         <div key={index} className="event">
                             {event.title}
@@ -96,8 +81,7 @@ const Calerder:  React.FC = () => {
             <div className="calendar-grid">
 
                 {
-                    [...Array(startDay).fill(null), ...calendarDays].map((day, index) => 
-                    {
+                     [...Array(startDay).fill(null), ...calendarDays].map((day, index) => {
                         const date = new Date(year, month, index + 1);
                         const dayEvents = events.filter((event) => isSameDay(event.startDate, date));
 
@@ -119,9 +103,7 @@ const Calerder:  React.FC = () => {
     )
 }
 const isSameDay = (date1: Date, date2: Date) => {
-const isSameDay = (date1: Date, date2: Date) => {
 
-    return (
     return (
         date1.getFullYear() === date2.getFullYear() &&
         date1.getMonth() === date2.getMonth() &&
