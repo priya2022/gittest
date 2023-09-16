@@ -17,7 +17,8 @@ const events: Events[] = [
     {
         title: "Meeting 3",
         startDate: new Date(2023, 8, 16)
-    }
+    },
+    
 ]
 const daysInMonth = (year: number, month: number) => {
     //For Getting a last Date of a month
