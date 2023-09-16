@@ -1,5 +1,5 @@
 import React from 'react'
-import './Calendar.css'
+
 interface Events {
     title: string,
     startDate: Date
@@ -28,7 +28,7 @@ const Calerder: React.FC = () => {
     const numOfDaysInMonth = daysInMonth(year, month)
 
 
-    const startDay = new Date(year, month, 1).getDay()
+    const startDay =  new Date(year,month, 1).getDay()
 
     //Creating a calendar and push my Data 
 
@@ -58,43 +58,8 @@ const Calerder: React.FC = () => {
     }
 
     return (
-        <div className="Calendar">
-
-            {/* Current Date and year , and current month */}
-            <h1>{currentDate.toLocaleString('default', { month: 'long' })} {year}</h1>
-            {/* Calendar-weeks  */}
-            <div className="calendar-header">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thur</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            {/* Array for the days  */}
-            <div className="calendar-grid">
-
-                {
-                    [...Array(startDay).fill(null), ...calendarDays].map((day, index) => 
-                    {
-                        const date = new Date(year, month, index + 1);
-                        const dayEvents = events.filter((event) => isSameDay(event.startDate, date));
-
-                        return (
-                            <div key={index} className="calendar-day">
-                                <span className="day-number">{index + 1}</span>
-                                {dayEvents.map((event, eventIndex) => (
-                                    <div key={eventIndex} className="event">
-                                        {event.title}
-                                    </div>
-                                ))}
-                            </div>
-                        );
-                    }
-                    )
-                }
-            </div>
+        <div>
+            
         </div>
     )
 }
