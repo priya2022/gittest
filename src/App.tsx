@@ -1,10 +1,11 @@
 import React from 'react'
-import WeekWise from './WeekWise'
-
+import Calendar from './Calerder'
 const App = () => {
   return (
     <div>
-      <WeekWise />
+      {/* <WeekWise /> */}
+      <Calendar />
+
     </div>
   )
 }
